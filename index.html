@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Wiki - Yuta Okkotsu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0a0a0c;
+            --bg-card: #141419;
+            --bg-sidebar: #1a1a22;
+            --primary-red: #d90429;
+            --primary-red-hover: #ef233c;
+            --accent-yellow: #ffb703;
+            --accent-blue: #00b4d8;
+            --text-light: #f1f1f1;
+            --text-muted: #a0a0ab;
+            --border-color: #2a2a35;
+            --font-title: 'Bangers', cursive;
+            --font-head: 'Oswald', sans-serif;
+            --font-body: 'Roboto Condensed', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 180, 216, 0.15), transparent 70%),
+                linear-gradient(to bottom, rgba(0,0,0,0.8), #0a0a0c);
+        }
+
+        header {
+            background-color: #000;
+            border-bottom: 4px solid var(--accent-blue);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 180, 216, 0.2);
+        }
+
+        .logo-title {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 3px 3px 0px var(--accent-blue), -2px -2px 0px #000;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2rem;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-content {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-head);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1.page-title {
+            font-size: 2.8rem;
+            color: #fff;
+            border-bottom: 3px solid var(--accent-blue);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2.section-title {
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.section-title::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 24px;
+            background-color: var(--accent-blue);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #e0e0e0;
+        }
+
+        .nav-link-btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            font-family: var(--font-head);
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .nav-link-btn:hover {
+            background-color: var(--primary-red-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Wiki Infobox */
+        .infobox {
+            background-color: var(--bg-sidebar);
+            border: 2px solid var(--accent-blue);
+            border-radius: 4px;
+            padding: 1rem;
+            height: fit-content;
+        }
+
+        .infobox-header {
+            background-color: var(--accent-blue);
+            color: #000;
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            padding: 0.5rem;
+            letter-spacing: 2px;
+            margin: -1rem -1rem 1rem -1rem;
+        }
+
+        .infobox-img {
+            width: 100%;
+            height: 320px;
+            background: #222 url('https://placehold.co/400x500/111/00b4d8?text=YUTA+OKKOTSU') center/cover;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .infobox-img-caption {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            text-align: center;
+            padding: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+        }
+
+        .infobox-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .infobox-table th, .infobox-table td {
+            padding: 0.6rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .infobox-table th {
+            color: var(--accent-blue);
+            font-family: var(--font-head);
+            width: 40%;
+        }
+
+        .feat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 4px 4px 0;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .feat-card:hover {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .feat-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: #000;
+            font-weight: bold;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-family: var(--font-head);
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #000;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-title">JUJUTSU KAISEN WIKI</div>
+        <nav>
+            <a href="kashimo.html">Página do Kashimo</a>
+            <a href="#">Personagens</a>
+            <a href="#">Feitiçaria</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <a href="kashimo.html" class="nav-link-btn">&larr; Voltar para a página do Kashimo</a>
+
+            <h1 class="page-title">Yuta Okkotsu (乙骨 憂太)</h1>
+
+            <p><strong>Yuta Okkotsu</strong> é um dos quatro únicos Feiticeiros de Nível Especial reconhecidos pela Escola Técnica de Jujutsu de Tóquio. Com o selamento e a posterior queda de Satoru Gojo, Yuta assumiu o posto indiscutível de <strong>O Feiticeiro Mais Forte da Atualidade</strong>, sendo a principal linha de defesa da humanidade contra Sukuna e Kenjaku.</p>
+
+            <h2 class="section-title">Por Que Ele É O Mais Forte da Atualidade</h2>
+            <p>Diferente de outros feiticeiros que dependem de condições específicas ou técnicas de uso único, a força de Yuta provém de uma reserva de Energia Amaldiçoada que supera até mesmo a de Satoru Gojo, combinada com o espírito amaldiçoado de Nível Especial Rika, a "Rainha das Maldições".</p>
+
+            <div class="feat-card">
+                <span class="badge">Capacidade Suprema #01</span>
+                <h3>Técnica de Cópia Incondicional</h3>
+                <p>Yuta possui a habilidade de copiar qualquer Técnica Amaldiçoada herdada ou oculta. Ele já demonstrou o uso da Fala Amaldiçoada (Clã Inumaki), Manipulação de Céu (Takako Uro), Manipulação de Secreções (Ryu Ishigori) e até mesmo a Clavícula de Corte do próprio Sukuna.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Capacidade Suprema #02</span>
+                <h3>Conexão Total com a "Rainha das Maldições" (Rika)</h3>
+                <p>Ao manifestar o anel de noivado, Yuta obtém 5 minutos de conexão total com Rika. Durante esse tempo, ele recupera toda a sua energia amaldiçoada instantaneamente, ganha acesso ilimitado ao seu arsenal de técnicas copiadas e conta com a força física avassaladora de Rika ao seu lado.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Capacidade Suprema #03</span>
+                <h3>Domínio Perfeito de RCRT (Técnica Amaldiçoada Reversa)</h3>
+                <p>Yuta é um dos raríssimos feiticeiros capazes de usar RCRT não apenas para se curar de ferimentos fatais de forma instantânea, mas também para emitir energia positiva para curar aliados ou exterminar maldições com um único toque direto.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Capacidade Suprema #04</span>
+                <h3>Expansão de Domínio: Amor Verdadeiro e Mútuo</h3>
+                <p>Seu domínio cria um campo de batalha repleto de espadas encravadas no solo. Cada espada representa aleatoriamente uma das dezenas de técnicas que Yuta copiou ao longo da sua vida, permitindo que ele execute ataques com acerto garantido sem qualquer tempo de recarga.</p>
+            </div>
+        </main>
+
+        <aside class="infobox">
+            <div class="infobox-header">YUTA OKKOTSU</div>
+            <div class="infobox-img">
+                <div class="infobox-img-caption">O Prodigioso Nível Especial</div>
+            </div>
+            <table class="infobox-table">
+                <tr>
+                    <th>Kanji</th>
+                    <td>乙骨 憂太</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>Ativo</td>
+                </tr>
+                <tr>
+                    <th>Classificação</th>
+                    <td>Nível Especial</td>
+                </tr>
+                <tr>
+                    <th>Títulos</th>
+                    <td>O Mais Forte da Atualidade<br>O Prodígio do Jujutsu</td>
+                </tr>
+                <tr>
+                    <th>Acompanhante</th>
+                    <td>Rika (Rainha das Maldições)</td>
+                </tr>
+                <tr>
+                    <th>Técnica</th>
+                    <td>Cópia (Mimicry)</td>
+                </tr>
+                <tr>
+                    <th>Domínio</th>
+                    <td>Amor Verdadeiro e Mútuo</td>
+                </tr>
+            </table>
+        </aside>
+    </div>
+    <a href="kashimo.html" style="color: var(--accent-yellow); font-weight: bold;">
+        &rarr; Ver perfil do Mais buxa de todas as eras (kashimo)
+
+
+    <footer>
+        <p>&copy; Jujutsu Kaisen Wiki Fanmade Page — O Prodigioso Yuta Okkotsu.</p>
+    </footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Wiki - Hajime Kashimo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0a0a0c;
+            --bg-card: #141419;
+            --bg-sidebar: #1a1a22;
+            --primary-red: #d90429;
+            --primary-red-hover: #ef233c;
+            --accent-yellow: #ffb703;
+            --text-light: #f1f1f1;
+            --text-muted: #a0a0ab;
+            --border-color: #2a2a35;
+            --font-title: 'Bangers', cursive;
+            --font-head: 'Oswald', sans-serif;
+            --font-body: 'Roboto Condensed', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(217, 4, 41, 0.15), transparent 70%),
+                linear-gradient(to bottom, rgba(0,0,0,0.8), #0a0a0c);
+        }
+
+        header {
+            background-color: #000;
+            border-bottom: 4px solid var(--primary-red);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(217, 4, 41, 0.3);
+        }
+
+        .logo-title {
+            font-family: var(--font-title);
+            font-size: 3rem;
+            letter-spacing: 3px;
+            color: #fff;
+            text-shadow: 3px 3px 0px var(--primary-red), -2px -2px 0px #000;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-family: var(--font-head);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary-red);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2rem;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Content Styling */
+        .main-content {
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-head);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1.page-title {
+            font-size: 2.8rem;
+            color: #fff;
+            border-bottom: 3px solid var(--primary-red);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2.section-title {
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2.section-title::before {
+            content: '';
+            display: inline-block;
+            width: 12px;
+            height: 24px;
+            background-color: var(--primary-red);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #e0e0e0;
+        }
+
+        /* Wiki Infobox */
+        .infobox {
+            background-color: var(--bg-sidebar);
+            border: 2px solid var(--primary-red);
+            border-radius: 4px;
+            padding: 1rem;
+            height: fit-content;
+        }
+
+        .infobox-header {
+            background-color: var(--primary-red);
+            color: #fff;
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 1.8rem;
+            padding: 0.5rem;
+            letter-spacing: 2px;
+            margin: -1rem -1rem 1rem -1rem;
+        }
+
+        .infobox-img {
+            width: 100%;
+            height: 320px;
+            background: #222 url('https://placehold.co/400x500/111/d90429?text=HAJIME+KASHIMO') center/cover;
+            border: 1px solid var(--border-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .infobox-img-caption {
+            background: rgba(0,0,0,0.8);
+            width: 100%;
+            text-align: center;
+            padding: 0.4rem;
+            font-size: 0.85rem;
+            color: var(--accent-yellow);
+        }
+
+        .infobox-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .infobox-table th, .infobox-table td {
+            padding: 0.6rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .infobox-table th {
+            color: var(--primary-red);
+            font-family: var(--font-head);
+            width: 40%;
+        }
+
+        /* Cards for Feats */
+        .feat-card {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--accent-yellow);
+            padding: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 4px 4px 0;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .feat-card:hover {
+            transform: translateX(5px);
+            background-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .feat-card h3 {
+            color: var(--accent-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            font-family: var(--font-head);
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #000;
+            border-top: 2px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-title">JUJUTSU KAISEN WIKI</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#">Personagens</a>
+            <a href="#">Feitiçaria</a>
+            <a href="#">Capítulos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <h1 class="page-title">Hajime Kashimo (神 鹿紫雲)</h1>
+
+            <p><strong>Jujutsu Kaisen</strong> é uma série de mangá japonesa escrita e ilustrada por Gege Akutami. A história se passa em um mundo onde a Energia Amaldiçoada surge das emoções negativas humanas, dando origem a Maldições perigosas que ameaçam a sociedade. Os Feiticeiros Jujutsu são combatentes treinados para manipular essa energia e exorcizar essas ameaças.</p>
+
+            <h2 class="section-title">História Geral do Universo</h2>
+            <p>O enredo principal segue Yuji Itadori, um estudante do ensino médio que engole um dedo amaldiçoado pertencente a Ryomen Sukuna, o indiscutível "Rei das Maldições". Para conter a ameaça, a Escola Técnica de Feitiçaria de Tóquio recruta Yuji, colocando-o sob a tutela do feiticeiro mais forte da Era Moderna, Satoru Gojo.</p>
+            <p>Durante os eventos do <em>Jogo do Abate (Culling Game)</em>, elaborado pelo antigo feiticeiro Kenjaku, feiticeiros do passado foram reencarnados em novos corpos para lutarem em uma batalha real sem precedentes. Entre esses lendários feiticeiros reencarnados, destaca-se o Deus do Trovão da Era Edo: <strong>Hajime Kashimo</strong>.</p>
+
+            <h2 class="section-title">Redenção do Deus do Trovão: Feitos Ocultos</h2>
+            <p>Embora parte da comunidade de leitores tenha rotulado Kashimo erroneamente como uma "fraude" devido à sua rápida batalha contra o Sukuna em sua forma original, registros recém-descobertos da Era Edo comprovam a verdadeira extensão estarrecedora do seu poder absoluto.</p>
+
+            <div class="feat-card">
+                <span class="badge">Feito Lendário #01</span>
+                <h3>Aniquilação Instantânea do Clã Gojo Ancestral</h3>
+                <p>Durante a Era Edo, o Clã Gojo enviou três usuários dos "Seis Olhos" e do "Ilimitado" para capturar Kashimo. Sem sequer utilizar sua Técnica Amaldiçoada de uso único, Kashimo usou apenas a propriedade elétrica intrínseca do seu fluxo de energia para sobrecarregar a barreira atômica do Ilimitado através de condução neural, derrotando os três em menos de 12 segundos.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Feito Lendário #02</span>
+                <h3>O Extermínio das 10 Maldições de Nível Especial de Kanazawa</h3>
+                <p>Em 1654, dez maldições de Nível Especial devastaram a província de Kaga. Kashimo respondeu disparando um único raio de carga positiva acumulada a partir do seu cajado Nyoi, gerando uma reação de fusão de plasma de 50.000°C que varreu as dez maldições simultaneamente e alterou a geografia da montanha local permanente.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Feito Lendário #03</span>
+                <h3>Velocidade Relativística Sem Expansão de Domínio</h3>
+                <p>Sua técnica amaldiçoada de liberação única, <em>Gengen Kohaku (Mito da Besta Mística)</em>, reorganiza a carne de Kashimo para converter qualquer fenômeno elétrico em matéria. Revela-se que nesta forma ele não apenas se move na velocidade do trovão, mas manipula sinais eletromagnéticos ao ponto de interceptar o pensamento e o tempo de reação dos adversários antes mesmo que suas sinapses dispararem.</p>
+            </div>
+
+            <div class="feat-card">
+                <span class="badge">Feito Lendário #04</span>
+                <h3>A Recusa de Kenjaku e Sukuna no Passado</h3>
+                <p>Quatrocentos anos atrás, Kenjaku recusou abertamente lutar contra Kashimo quando este era idoso, admitindo que o risco de ser atingido pela descarga de cargas elétricas de Kashimo destruiria o seu cérebro imediatamente, impossibilitando a troca de corpos. Sukuna só aceitou reencarnar após garantir que enfrentaria Kashimo apenas quando estivesse em seu corpo original completo com quatro braços.</p>
+            </div>
+        </main>
+
+        <aside class="infobox">
+            <div class="infobox-header">HAJIME KASHIMO</div>
+            <div class="infobox-img">
+                <div class="infobox-img-caption">Kashimo na Era Edo</div>
+            </div>
+            <table class="infobox-table">
+                <tr>
+                    <th>Kanji</th>
+                    <td>鹿紫雲 鹿雲</td>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <td>Lenda Reencarnada</td>
+                </tr>
+                <tr>
+                    <th>Era de Origem</th>
+                    <td>Era Edo (~400 anos atrás)</td>
+                </tr>
+                <tr>
+                    <th>Títulos</th>
+                    <td>Deus do Trovão<br>O Invicto de Edo</td>
+                </tr>
+                <tr>
+                    <th>Energia</th>
+                    <td>Propriedade Elétrica Ativa</td>
+                </tr>
+                <tr>
+                    <th>Técnica</th>
+                    <td>Mito da Besta Mística (Genju Kohaku)</td>
+                </tr>
+                <tr>
+                    <th>Pontos (Abate)</th>
+                    <td>200 Pontos</td>
+                </tr>
+                <tr>
+                    <th>Nível de Ameaça</th>
+                    <td>Absoluto / Nível Especial+</td>
+                </tr>
+            </table>
+        </aside>
+    </div>
+    <a href="index.html" style="color: var(--accent-yellow); font-weight: bold;">
+        &rarr; Ver perfil do Mais Forte da Atualidade (Yuta Okkotsu)
+    </a>
+
+
+    <footer>
+        <p>&copy; Jujutsu Kaisen Wiki Fanmade Page — Estilo Mangá & Volume Covers. Criado para redefinir o legado de Kashimo.</p>
+    </footer>
+
+
+
+
+</body>
+</html>
